@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Freelancer - Start Bootstrap Theme</title>
+    <title>Budgup</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -73,7 +73,7 @@
 
 
 <!-- Contact Section -->
-<section id="contact">
+<section id="inscription">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -85,40 +85,58 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                 <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                <form name="sentMessage" id="contactForm" novalidate>
+                <form name="sentMessage" id="inscriptionForm" novalidate>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                            <label>Nom</label>
+                            <input type="text" class="form-control" placeholder="Nom" id="nom" minlength="2" required data-validation-required-message="Veuillez entrer votre nom.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Email Address</label>
-                            <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                            <label>Prénom</label>
+                            <input type="text" class="form-control" name="prenom" placeholder="Prénom" id="prenom" minlength="2" required data-validation-required-message="Veuillez entrer votre prénom.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Phone Number</label>
-                            <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
+                            <label>Email</label>
+                            <input type="email" class="form-control" name="email" placeholder="Email" id="email" required data-validation-required-message="Veuillez entrer votre adresse mail.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Message</label>
-                            <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                            <label>Retapez votre email</label>
+                            <input type="email" class="form-control"  name="emailconfirmation" placeholder="Retapez votre email" id="emailconfirmation" data-validation-matches-match="email" data-validation-matches-message="Les emails ne sont pas identiques" required data-validation-required-message="Veuillez retaper votre adresse mail.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Mot de passe</label>
+                            <input type="password" class="form-control" name="motdepasse" placeholder="Tapez un mot de passe" id="motdepasse" minlength="8" required data-validation-required-message="Veuillez tapez un mot de passe.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Retapez votre mot de passe</label>
+                            <input type="password" class="form-control" name="motdepasseconf"  placeholder="Retapez un mot de passe" id="motdepasseconf" data-validation-matches-match="motdepasse" data-validation-matches-message="Les mots de passe ne sont pas identiques" required data-validation-required-message="Veuillez retaper votre mot de passe.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+
                     <br>
                     <div id="success"></div>
                     <div class="row">
                         <div class="form-group col-xs-12">
                             <button type="submit" class="btn btn-success btn-lg">S'inscrire</button>
+                        </div>
+                        <div class="form-group col-xs-12">
+                            <a href="/connexion">J'ai déjà un compte. Se connecter.</a>
                         </div>
                     </div>
                 </form>
@@ -158,7 +176,7 @@
                     </ul>
                 </div>
                 <div class="footer-col col-md-4">
-                    <h3>About Freelancer</h3>
+                    <h3>About Budgup</h3>
                     <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
                 </div>
             </div>
@@ -417,7 +435,7 @@
 
 <!-- Contact Form JavaScript -->
 <script src="js/jqBootstrapValidation.js"></script>
-<script src="js/contact_me.js"></script>
+<script src="js/inscription.js"></script>
 
 <!-- Theme JavaScript -->
 <script src="js/freelancer.min.js"></script>
