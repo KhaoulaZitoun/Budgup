@@ -11,14 +11,19 @@ $(function() {
             event.preventDefault();
             
             // get values from FORM
-            var name = $("input#name").val();
+            var nom = $("input#nom").val();
+            var prenom = $("input#prenom").val();
             var email = $("input#email").val();
-            var phone = $("input#phone").val();
-            var message = $("textarea#message").val();
-            var firstName = name; // For Success/Failure Message
+            var emailconfirmation = $("input#emailconfirmation").val();
+            var motdepasse = $("input#motdepasse").val();
+            var motdepasseconf = $("textarea#motdepasseconf").val();
+
             // Check for white space in name for Success/Fail message
-            if (firstName.indexOf(' ') >= 0) {
-                firstName = name.split(' ').slice(0, -1).join(' ');
+            if (prenom.indexOf(' ') >= 0) {
+                prenom = name.split(' ').slice(0, -1).join(' ');
+            }
+            if (nom.indexOf(' ') >= 0) {
+                nom = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
                 url: "././mail/contact_me.php",
