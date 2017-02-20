@@ -1,12 +1,13 @@
 var express = require('express');
-var router = express.Router();
 var path = require('path');
 var Client = require('../models/client');
 var app = express();
 
 // Main route of the application to test the HTTP API.
 
-router.get('/', function(req, res, next) {
+
+
+app.get('/', function(req, res) {
     res.status(200).sendFile('index.html');
 });
 
@@ -16,13 +17,14 @@ router.get('/', function(req, res, next) {
 
 
 // Affiche la page d'inscription
-router.get('/inscription', function(req, res) {
+app.get('/inscription', function(req, res) {
  res.status(200).sendFile(path.resolve('client/inscription.html'));
  });
 
 
+
 // Valide les informations du formulaire d'inscription
-router.post('/inscription', function(req, res,next) {
+app.post('/inscription', function(req, res,next) {
     Client.create(req.body, function(err, client) {
         if(err) {
            next(err);
@@ -40,11 +42,11 @@ router.post('/inscription', function(req, res,next) {
 /* ********************************************************** */
 
 // Affiche la page de connexion
-router.get('/connexion', function(req, res) {
+app.get('/connexion', function(req, res) {
     res.status(200).sendFile(path.resolve('client/connexion.html'));
 });
 
-router.post('/connexion', function(req, res, next) {
+app.post('/connexion', function(req, res, next) {
     /*
      `Debt.request` also has an `options` parameter where you can specify
      things, like a specific key.
@@ -73,7 +75,7 @@ router.post('/connexion', function(req, res, next) {
 
 
 
-router.get('/clients', function(req, res, next) {
+app.get('/clients', function(req, res, next) {
 
     Client.request('all', function(err, clients) {
         if(err) {
@@ -89,5 +91,5 @@ router.get('/clients', function(req, res, next) {
 
 
 // Export the router instance to make it available from other files.
-module.exports = router;
+module.exports = app;
 
