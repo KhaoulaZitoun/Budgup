@@ -51,7 +51,7 @@ gulp.task('sonar', function () {
             projectName: 'Budgup',
             projectVersion: '0.0.1',
             // comma-delimited string of source directories
-            sources: 'client/js,server/*',
+            sources: 'client/js,server/**',
             language: 'js',
             sourceEncoding: 'UTF-8',
             javascript: {
