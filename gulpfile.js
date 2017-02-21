@@ -9,29 +9,27 @@ var istanbul = require('gulp-istanbul');
 var path = require('path');
 var coveralls = require('gulp-coveralls');
 
-
 // Coveralls
 
-gulp.task('coveralls', ['test'], function () {
+/*gulp.task('coveralls', ['test'], function () {
     if (!process.env.CI) {
         return;
     }
 
-    return gulp.src('test/coverage/**/lcov.info')
+    return gulp.src('test/coverage/**//*lcov.info')
         .pipe(coveralls());
 });
-
+*/
 //Codacy
 
 gulp.task('codacy', function sendToCodacy() {
     return gulp
         .src(['test/coverage/coverage.lcov'])
         .pipe(gulpIf(!!process.env.TRAVIS, codacy({
-            token: '2dfdf24f7c8c47e79e1c6ca4c46ed44b'
+            token: '41e25d0a34ec49e08b8815c4490573fe'
         })))
         ;
 });
-
 
 
 // Sonar
@@ -51,7 +49,7 @@ gulp.task('sonar', function () {
             projectName: 'Budgup',
             projectVersion: '0.0.1',
             // comma-delimited string of source directories
-            sources: 'client/js,server/**',
+            sources: './client/public, ./client/views, ./server/controllers, ./server/models, ./test',
             language: 'js',
             sourceEncoding: 'UTF-8',
             javascript: {
@@ -93,4 +91,4 @@ gulp.task('test', ['pre-test'], function () {
         .pipe(istanbul.enforceThresholds({ thresholds: { global: 90 } }));
 });
 
-gulp.task('default', sequence(['pre-test','codacy', 'coveralls','test']));
+gulp.task('default', sequence(['pre-test','codacy'/*, 'coveralls'*/,'test']));

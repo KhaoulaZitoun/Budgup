@@ -12,13 +12,13 @@
     <title>Budgup</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
+    <link href="../public/css/freelancer.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../public/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -73,11 +73,11 @@
 
 
 <!-- Contact Section -->
-<section id="connexion">
+<section id="inscription">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>CONNEXION</h2>
+                <h2>INSCRIPTION</h2>
                 <hr class="star-primary">
             </div>
         </div>
@@ -85,33 +85,58 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                 <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                <form name="sentMessage" id="connexionForm" novalidate>
-
-
+                <form name="sentMessage" id="inscriptionForm" novalidate>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Nom</label>
+                            <input type="text" class="form-control" placeholder="Nom" id="nom" minlength="2" required data-validation-required-message="Veuillez entrer votre nom.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Prénom</label>
+                            <input type="text" class="form-control" name="prenom" placeholder="Prénom" id="prenom" minlength="2" required data-validation-required-message="Veuillez entrer votre prénom.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Email</label>
-                            <input type="email" class="form-control"  name="email" placeholder="Email" id="email" required data-validation-required-message="Veuillez taper votre adresse mail.">
+                            <input type="email" class="form-control" name="email" placeholder="Email" id="email" required data-validation-required-message="Veuillez entrer votre adresse mail.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Retapez votre email</label>
+                            <input type="email" class="form-control"  name="emailconfirmation" placeholder="Retapez votre email" id="emailconfirmation" data-validation-matches-match="email" data-validation-matches-message="Les emails ne sont pas identiques" required data-validation-required-message="Veuillez retaper votre adresse mail.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Mot de passe</label>
-                            <input type="password" class="form-control" name="motdepasse" placeholder="Tapez votre mot de passe" id="motdepasse" minlength="8" required data-validation-required-message="Veuillez tapez un mot de passe.">
+                            <input type="password" class="form-control" name="motdepasse" placeholder="Tapez un mot de passe" id="motdepasse" minlength="8" required data-validation-required-message="Veuillez tapez un mot de passe.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
-
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Retapez votre mot de passe</label>
+                            <input type="password" class="form-control" name="motdepasseconf"  placeholder="Retapez un mot de passe" id="motdepasseconf" data-validation-matches-match="motdepasse" data-validation-matches-message="Les mots de passe ne sont pas identiques" required data-validation-required-message="Veuillez retaper votre mot de passe.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
 
                     <br>
                     <div id="success"></div>
                     <div class="row">
                         <div class="form-group col-xs-12">
-                            <button type="submit" class="btn btn-success btn-lg">Se connecter</button>
+                            <button type="submit" class="btn btn-success btn-lg">S'inscrire</button>
                         </div>
                         <div class="form-group col-xs-12">
-                            <a href="/inscription">Je n'ai pas de compte. S'inscrire.</a>
+                            <a href="/connexion">J'ai déjà un compte. Se connecter.</a>
                         </div>
                     </div>
                 </form>
@@ -190,7 +215,7 @@
                     <div class="modal-body">
                         <h2>Project Title</h2>
                         <hr class="star-primary">
-                        <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
+                        <img src="../public/img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
                         <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                         <ul class="list-inline item-details">
                             <li>Client:
@@ -227,7 +252,7 @@
                     <div class="modal-body">
                         <h2>Project Title</h2>
                         <hr class="star-primary">
-                        <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
+                        <img src="../public/img/portfolio/cake.png" class="img-responsive img-centered" alt="">
                         <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                         <ul class="list-inline item-details">
                             <li>Client:
@@ -264,7 +289,7 @@
                     <div class="modal-body">
                         <h2>Project Title</h2>
                         <hr class="star-primary">
-                        <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
+                        <img src="../public/img/portfolio/circus.png" class="img-responsive img-centered" alt="">
                         <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                         <ul class="list-inline item-details">
                             <li>Client:
@@ -301,7 +326,7 @@
                     <div class="modal-body">
                         <h2>Project Title</h2>
                         <hr class="star-primary">
-                        <img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
+                        <img src="../public/img/portfolio/game.png" class="img-responsive img-centered" alt="">
                         <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                         <ul class="list-inline item-details">
                             <li>Client:
@@ -338,7 +363,7 @@
                     <div class="modal-body">
                         <h2>Project Title</h2>
                         <hr class="star-primary">
-                        <img src="img/portfolio/safe.png" class="img-responsive img-centered" alt="">
+                        <img src="../public/img/portfolio/safe.png" class="img-responsive img-centered" alt="">
                         <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                         <ul class="list-inline item-details">
                             <li>Client:
@@ -375,7 +400,7 @@
                     <div class="modal-body">
                         <h2>Project Title</h2>
                         <hr class="star-primary">
-                        <img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
+                        <img src="../public/img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
                         <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                         <ul class="list-inline item-details">
                             <li>Client:
@@ -400,20 +425,20 @@
 </div>
 
 <!-- jQuery -->
-<script src="vendor/jquery/jquery.min.js"></script>
+<script src="../public/vendor/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../public/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
 <!-- Contact Form JavaScript -->
-<script src="js/jqBootstrapValidation.js"></script>
-<script src="js/connexion.js"></script>
+<script src="../public/js/jqBootstrapValidation.js"></script>
+<script src="../public/js/inscription.js"></script>
 
 <!-- Theme JavaScript -->
-<script src="js/freelancer.min.js"></script>
+<script src="../public/js/freelancer.min.js"></script>
 
 </body>
 
